@@ -121,7 +121,7 @@ async function submitPost(e) {
   loadPosts(cid);
 
   // update timeline
-  loadTimeline(cid);
+  loadTimeline();
 
   return false;
 

@@ -1,27 +1,19 @@
 {
   "canisters": {
     "microblog": {
-      "main": "src/mircoblog_full/main.mo",
+      "main": "src/microblog_full/main.mo",
       "type": "motoko"
     },
-    "microblog2": {
-      "main": "src/mircoblog_full/main.mo",
-      "type": "motoko"
-    },
-    "microblog3": {
-      "main": "src/mircoblog_full/main.mo",
-      "type": "motoko"
-    },
-    "mircoblog_full_assets": {
+    "microblog_full_assets": {
       "dependencies": [
         "microblog"
       ],
       "frontend": {
-        "entrypoint": "src/mircoblog_full_assets/src/index.html"
+        "entrypoint": "src/microblog_full_assets/src/index.html"
       },
       "source": [
-        "src/mircoblog_full_assets/assets",
-        "dist/mircoblog_full_assets/"
+        "src/microblog_full_assets/assets",
+        "dist/microblog_full_assets/"
       ],
       "type": "assets"
     }

@@ -28,3 +28,11 @@ dfx canister call microblog2 post "(\"1st post from alice's blog\",\"alice\")"
 dfx canister call microblog3 set_name "(\"bob's blog\")"
 dfx canister call microblog3 post "(\"1st post from bob's blog\",\"bob\")"
 ```
+
+
+ic network deploy
+```
+dfx canister --network ic create microblog
+
+
+```

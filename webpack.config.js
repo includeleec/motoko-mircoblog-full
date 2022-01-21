@@ -38,7 +38,7 @@ const canisterEnvVariables = initCanisterEnv();
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
-const frontendDirectory = "mircoblog_full_assets";
+const frontendDirectory = "microblog_full_assets";
 
 const asset_entry = path.join("src", frontendDirectory, "src", "index.html");
 

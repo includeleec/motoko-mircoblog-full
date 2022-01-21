@@ -17,7 +17,7 @@ shared(install) actor class MicroblogFull() {
     stable var blogName : Text = "";
 
     public shared({ caller }) func set_name(text: Text): async() {
-        assert(caller == install.caller);
+        // assert(caller == install.caller);
         blogName := text;
     };
 

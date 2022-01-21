@@ -4,6 +4,14 @@
       "main": "src/microblog_full/main.mo",
       "type": "motoko"
     },
+    "microblog2": {
+      "main": "src/microblog_full/main.mo",
+      "type": "motoko"
+    },
+    "microblog3": {
+      "main": "src/microblog_full/main.mo",
+      "type": "motoko"
+    },
     "microblog_full_assets": {
       "dependencies": [
         "microblog"

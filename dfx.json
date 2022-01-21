@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "mircoblog_full": {
+      "main": "src/mircoblog_full/main.mo",
+      "type": "motoko"
+    },
+    "mircoblog_full_assets": {
+      "dependencies": [
+        "mircoblog_full"
+      ],
+      "frontend": {
+        "entrypoint": "src/mircoblog_full_assets/src/index.html"
+      },
+      "source": [
+        "src/mircoblog_full_assets/assets",
+        "dist/mircoblog_full_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.8.4",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

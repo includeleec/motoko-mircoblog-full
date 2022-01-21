@@ -1,0 +1,20 @@
+type Time = int;
+type MicroblogFull = 
+ service {
+   follow: (principal) -> ();
+   follows: () -> (vec principal) query;
+   get_name: () -> (text) query;
+   greet: (text) -> (text);
+   installer: () -> (principal) query;
+   post: (text, text) -> ();
+   posts: (Time) -> (vec Message) query;
+   set_name: (text) -> ();
+   timeline: (Time) -> (vec Message);
+ };
+type Message = 
+ record {
+   author: text;
+   "text": text;
+   time: Time;
+ };
+service : () -> MicroblogFull

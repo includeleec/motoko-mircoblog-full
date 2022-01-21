@@ -3,20 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>mircoblog_full</title>
+    <title>Microblog</title>
     <base href="/" />
     <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@1.24.3/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
   </head>
   <body>
-    <main>
-      <img src="logo.png" alt="DFINITY logo" />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
+    <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content">
+      <div class="flex-none px-2 mx-2">
+        <span id="blog-name" class="text-lg font-bold"> Microblog </span>
+      </div>
+      <div class="flex-1 px-2 mx-2">
+        <div class="items-stretch hidden lg:flex">
+          <a class="btn btn-ghost btn-sm rounded-btn"> Home </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-4">
+
+      <!-- info -->
+      <div class="card shadow-lg px-8 py-8 mb-8">
+        <div class="text-2xl font-bold">My Blog name: <span id="my-blog-name"></span></div>
+        <div class="text-2xl font-bold">My Blog Canister ID: <span id="my-blog-cid"></span></div>
+      </div>
+
+      <!-- timeline -->
+      <div class="card shadow-lg px-8 py-8 mb-8">
+        <div class="text-2xl font-bold">Timeline</div>
+        <div class="overflow-x-auto mt-4">
+          <table id="timeline" class="table w-full">
+            <thead>
+              <tr>
+                <th>Messages</th>
+                <th>Authors</th>
+                <th>Datetime</th>
+              </tr>
+            </thead>
+            <tbody id="timeline-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+      <!-- post a new message -->
+      <div class="card shadow-lg px-8 py-8 mb-8">
+        <div class="text-2xl font-bold">Post a new message</div>
+        <form>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Message</span>
+            </label>
+            <textarea
+              id="message"
+              class="textarea h-24 textarea-bordered"
+              placeholder="Message"
+            ></textarea>
+          </div>
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Author</span>
+            </label>
+            <input
+              id="author"
+              type="text"
+              placeholder="Author"
+              class="input input-bordered w-1/4"
+            />
+          </div>
+
+          <button id="post-btn" type="submit" class="btn btn-info mt-4 px-8">Post</button>
+        </form>
+
+        <div id="form-alert" class="alert alert-success mt-4 hidden">
+          <div class="flex-1">
+            <label>Post new message success!</label>
+          </div>
+        </div>
+
+      <!-- blog tabs -->
+        <div class="mt-6 text-2xl font-bold">Select a blog to post</div>
+        <div id="blog-tabs" class="tabs py-4">
+          <a class="tab tab-lifted tab-active">My posts</a> 
+        </div>
+      
+      
+
+      <!-- posts -->
+      <div class="overflow-x-auto">
+        <table id="posts" class="table w-full">
+          <thead>
+            <tr>
+              <th>Messages</th>
+              <th>Authors</th>
+              <th>Datetime</th>
+            </tr>
+          </thead>
+          <tbody id="posts-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+
+
   </body>
 </html>
